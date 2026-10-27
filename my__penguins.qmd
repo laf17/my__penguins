@@ -22,3 +22,7 @@ bills<- penguins|>
 
 glimpse(bills)
 ```
+```{r}
+ggplot(bills, aes(x=species, y=avg_length))+
+  geom_col()
+```
