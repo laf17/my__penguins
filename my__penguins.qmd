@@ -1,11 +1,24 @@
 ---
-title: "my__penguins"
+title: "my_penguins"
+author: "Laney Flores (laf3326)"
+format: html
 ---
 
-## Quarto
+```{r}
+library(tidyverse)
+library(palmerpenguins)
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+```
+
+summary table
 
 ```{r}
-1 + 1
+bills<- penguins|>
+  group_by(species)|>
+  summarize(
+    n=n(),
+    avg_length=mean(bill_length_mm,na.rm=TRUE)
+  )
+
+glimpse(bills)
 ```
